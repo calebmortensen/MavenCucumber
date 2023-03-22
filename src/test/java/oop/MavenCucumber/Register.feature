@@ -1,7 +1,10 @@
 Feature: User Registration
 
-Scenario: Register with mandatory fields
+Background:
 Given Navigate to Register Account page
+
+Scenario: Register with mandatory fields
+
 When firstname entered in First Name field "Caleb"
 And lastname entered in Last Name field "Mortensen"
 And email entered in Email field "caleb.mortensen@live.com"
@@ -13,7 +16,7 @@ And clicks on Continue button
 Then Account is successfully created
 
 Scenario: Register with All fields
-Given Navigate to Register Account page
+
 When firstname entered in First Name field "Caleb"
 And lastname entered in Last Name field "Mortensen"
 And email entered in Email field "caleb.mortensen@live.com"
@@ -26,13 +29,13 @@ And clicks on Continue button
 Then Account is successfully created
 
 Scenario: Register without providing any fields
-Given Navigate to Register Account page
+
 When no details entered
 And clicks Continue button
 Then Warning message displayed
 
 Scenario: with duplicate email address
-Given Navigate to Register Account page
+
 When firstname entered in First Name field "Caleb"
 And lastname entered in Last Name field "Mortensen"
 And email entered in Email field "caleb.mortensen@live.com"

@@ -3,20 +3,20 @@ package oop.MavenCucumber;
 import io.cucumber.java.en.*;
 
 public class Login {
-
+	//Note: The ^, $, (.+) are used for parameters (for Feature: Scenario Outline: and Examples:)
 	@Given("User navigates to Login page")
 	public void user_navigate_to_login_page() {
 	    System.out.println(">>User landed on login page");
 	}
 
-	@When("User enters email address {string}")
+	@When("^User enters email address (.+)")
 	public void user_enters_email_address(String email) {
 		System.out.println(">>User enters valid email address"+email);
 	}
 
-	@When("Enter valid password {string}")
-	public void enter_valid_password(String passwordText) {
-	  System.out.println("User Enters valid password"+passwordText);
+	@When("^Enter valid password (.+)")
+	public void enter_valid_password(String password) {
+	  System.out.println("User Enters valid password"+password);
 	}
 
 	@When("Clicks on Login button")
