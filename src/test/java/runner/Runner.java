@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 //@all tag runs ALL Scenarios. Can use 'and' 'or'  'not' between tags too
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/test/java/features",
+		features="src/test/java/features",  //all vs individual: src/test/java/features.Search.feature
 		glue="stepdefinitions",
 		plugin={"pretty","html:target/CucumberReport.html"})  //,tags="@all"
 
