@@ -1,5 +1,9 @@
 package oop.MavenCucumber;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,6 +11,25 @@ import io.cucumber.java.en.When;
 public class Search {
 	//TIDY GHERKIN Chrome Plugin can be used
 
+	@Before //("@register")  //HOOK with TAG (order=1)
+	public void setup() {
+		System.out.println("Browser is launched");
+	}
+	
+	@After   //HOOK (order=0) means LAST
+	public void tearDown() {
+		System.out.println("Browser is closed");
+	}
+	
+	@BeforeStep //HOOK
+	public void beforeEverystep() {
+		System.out.println("Runs BEFORE EVERY STEP");
+	}
+	
+	@AfterStep //HOOK
+	public void afterEverystep() {
+		System.out.println("Runs AFTER EVERY STEP");
+	}
 	@Given("Navigate to application")
 	public void navigate_to_application() {
 	    System.out.println("User navigates to application");

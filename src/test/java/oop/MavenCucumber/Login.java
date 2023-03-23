@@ -3,7 +3,8 @@ package oop.MavenCucumber;
 import io.cucumber.java.en.*;
 
 public class Login {
-	//Note: The ^, $, (.+) are used for parameters (for Feature: Scenario Outline: and Examples:)
+	//Note: Regular expressions: ^, $, (.+) are used for parameters VS Cucumber "" expressions
+	//Feature: Scenario Outline: and Examples:)
 	@Given("User navigates to Login page")
 	public void user_navigate_to_login_page() {
 	    System.out.println(">>User landed on login page");
