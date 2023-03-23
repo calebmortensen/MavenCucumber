@@ -1,4 +1,4 @@
-package oop.MavenCucumber;
+package stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;

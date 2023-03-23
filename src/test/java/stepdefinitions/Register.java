@@ -1,4 +1,4 @@
-package oop.MavenCucumber;
+package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +12,9 @@ public class Register {
 		
 		System.out.println("Navigates to Register Account page");
 	}
+	//From Register.feature, setup an @When User enters below details |firstname| |caleb| etc...
+	//Map<String, String> map = dataTable.asMap(String.class,String.class);
+	//System.out.println("User has entered first name as "+map.get("firstname"); etc
 	
 	@When("firstname entered in First Name field {string}")
 	public void firstname_entered_in_First_Name_field(String firstName) {
