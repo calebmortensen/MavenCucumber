@@ -1,11 +1,13 @@
 package runner;
 
 import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
 //@all tag runs ALL Scenarios. Can use 'and' 'or'  'not' between tags too
 //all vs individual: src/test/java/features.Search.feature
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class) - Junit
 @CucumberOptions(
 		features="src/test/java/features",
 		glue={"stepdefinitions"},
@@ -17,7 +19,7 @@ import io.cucumber.junit.CucumberOptions;
 				"json:target/CucumberReport.json",
 				"junit:target/CucumberReport.xml"})
 
-public class Runner {
+public class Runner extends AbstractTestNGCucumberTests{
 
 }
 
