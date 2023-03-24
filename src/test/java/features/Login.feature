@@ -2,7 +2,6 @@
 Feature: User Login
   Registered User should be able to login to access account details
 
-# Hashtage is used for COMMENTS
 # Gherkin Chrome Plugin is used for generating code for Cucumber
 
   Background: 

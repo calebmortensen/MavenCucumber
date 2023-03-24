@@ -1,64 +1,49 @@
 package stepdefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
 public class Search {
-	//TIDY GHERKIN Chrome Plugin can be used
-
-	@Before //("@register")  //HOOK with TAG (order=1)
-	public void setup() {
-		System.out.println("Browser is launched");
-	}
+	WebDriver driver;
 	
-	@After   //HOOK (order=0) means LAST
-	public void tearDown() {
-		System.out.println("Browser is closed");
-	}
-	
-	@BeforeStep //HOOK
-	public void beforeEverystep() {
-		System.out.println("Runs BEFORE EVERY STEP");
-	}
-	
-	@AfterStep //HOOK
-	public void afterEverystep() {
-		System.out.println("Runs AFTER EVERY STEP");
-	}
 	@Given("Navigate to application")
 	public void navigate_to_application() {
-	    System.out.println("User navigates to application");
+		
+		driver = DriverFactory.getDriver();
+	    
 	}
 
-	@When("a valid product is entered in Search field")
-	public void a_valid_product_is_entered_in_search_field() {
-	    System.out.println("User enters valid product in search field");
+	@When("a valid product is entered in Search field {string}")
+	public void a_valid_product_is_entered_in_search_field(String validProductText) {
+		driver.findElement(By.name("search")).sendKeys("validProductText");
 	}
 
 	@When("Search button selected")
-	public void search_button_selected() {
-	    System.out.println("Search button selected");
+	public void search_button_selected() { //may not work
+	    driver.findElement(By.xpath("/html/body/header/div/div/div[2]/div/span/button")).click();
 	}
 
 	@Then("Valid product is displayed in search results")
 	public void valid_product_is_displayed_in_search_results() {
-		System.out.println("Valid product is displayed");
+		Assert.assertTrue(driver.findElement(By.linkText("HP LP3065")).isDisplayed());
 	}
 
-	@When("a non-existent product is entered in Search field")
-	public void a_non_existent_product_is_entered_in_search_field() {
-		System.out.println("Non-existent product is entered in Search field");
+	@When("a non-existent product is entered in Search field {string}")
+	public void a_non_existent_product_is_entered_in_search_field(String invalidProduct) {
+		driver.findElement(By.name("search")).sendKeys("invalidProduct");
 	}
 
 	@Then("message prompts user there is No Product Matching")
 	public void message_prompts_user_there_is_no_product_matching() {
-	    System.out.println("Message prompts user there is No Product Matching");
+		Assert.assertEquals("There is no product that matches the search criteria.", driver.findElement(By.xpath("//input[@id='button-search']/following-sibling::p")).getText());
+	    
 	}
 	
 }
