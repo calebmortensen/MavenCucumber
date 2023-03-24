@@ -3,7 +3,7 @@ Feature: Search functionality
 
 Background:
 Given Navigate to application
-
+#But
 @search @validproduct @smoke @regression
 Scenario: Search for a valid product
 When a valid product is entered in Search field
