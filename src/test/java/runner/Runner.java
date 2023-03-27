@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 //@RunWith(Cucumber.class) - Junit
 @CucumberOptions(
 		features="src/test/java/features",
-		glue={"stepdefinitions"},
+		glue={"stepdefinitions","hooks"},
 	  //tags="@smoke" "@all"
 		//publish=true, //publishes to cucumber.io
 		//dryRun=false, //false is default - runs everything even if a feature isn't implemented
