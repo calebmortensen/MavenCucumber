@@ -19,7 +19,7 @@ import utils.CommonUtils;
 public class Login {
 	WebDriver driver; 
 	//Note: Regular expressions: ^, $, (.+) are used for parameters VS Cucumber "" expressions
-	//Feature: Scenario Outline: and Examples:
+	//Feature: Scenario Outline: and Examples:    Use: TIDY GHERKIN Chrome Extension
 		
 	private LoginPage loginPage;
 	
