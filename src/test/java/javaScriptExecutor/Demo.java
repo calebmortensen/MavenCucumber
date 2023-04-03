@@ -28,12 +28,14 @@ public class Demo {
 	private static void javaScriptClick(ChromeDriver driver, WebElement button) {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].click()", button);
+		//driver.quit();
 
 	}
-	// driver.findElement(By.xpath("//div[@id='car']/button"));
-	// WebElement buttonElement = driver.findElement(By.id("alert1"));
-	// jse.executeScript("prompt('What is your name?')");
-	// jse.executeScript("alert('Caleb Mortensen')");
-	// jse.executeScript("confirm('Do you want to proceed?')");
 
 }
+
+// driver.findElement(By.xpath("//div[@id='car']/button"));
+// WebElement buttonElement = driver.findElement(By.id("alert1"));
+// jse.executeScript("prompt('What is your name?')");
+// jse.executeScript("alert('Caleb Mortensen')");
+// jse.executeScript("confirm('Do you want to proceed?')");
