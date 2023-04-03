@@ -39,7 +39,7 @@ public class Demo {
 		ImageIO.write(srcImage, "PNG", new File(".//src//test//java//robot//screenshots//robot.png"));
 		
 		
-		/*
+		/* String path = System.getProperty("user.dir")+".//src//test//java//robot//screenshots//robot.png";
 		 * Rectangle rectangle = new Rectangle(25,50,1000,300); //x,y,width,height
 		 * BufferedImage srcImage = robot.createScreenCapture(rectangle);
 		 * ImageIO.write(srcImage, "PNG", new
