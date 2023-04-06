@@ -1,0 +1,19 @@
+{
+	"EmployeeData": [
+		{
+			"Name": "Caleb",
+			"Location": "Pacific Beach",
+			"Experience": "10"
+		},
+		{
+			"Name": "Amy",
+			"Location": "Mission Valley",
+			"Experience": "11"
+		},
+		{
+			"Name": "Joe",
+			"Location": "Ocean Beach",
+			"Experience": "5"
+		}
+	]
+}
