@@ -32,7 +32,7 @@ public class Demo {
 		String hostURL = fileToDownload.getHost();
 		int port = fileToDownload.getPort();
 		
-		
+		/*
 		HttpClient hClient = new HttpClient();
 		hClient.getParams().setCookiePolicy(CookiePolicy.RFC_2965);
 		HostConfiguration hostConfig = new hostConfiguration();
@@ -62,7 +62,7 @@ public class Demo {
 		}
 		
 		driver.quit();
-		
+		*/
 		}
 
 }
