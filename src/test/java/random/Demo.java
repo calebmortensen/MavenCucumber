@@ -31,7 +31,16 @@ public class Demo {
 		Set<Cookie> cookies = driver.manage().getCookies();
 		Iterator<Cookie> itr = cookies.iterator();
 		while (itr.hasNext()) {
-			System.out.println(itr.next());
+			Cookie cookie = itr.next();
+			System.out.println("Name of Cookie: "+ cookie.getName());
+			System.out.println("Value of Cookie: "+ cookie.getValue());
+			System.out.println("Domain of Cookie: "+ cookie.getDomain());
+			System.out.println("Path of Cookie: " + cookie.getPath());
+			System.out.println("Expiry of Cookie "+ cookie.getExpiry());
+			
+			if(cookie.getName().equals("ebay")) {
+				driver.manage().deleteCookie(cookie);
+			}
 		}
 				
 		//Delete cookies for website
