@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-14T08:32:21 PDT" name="Default suite" finished-at="2023-04-14T08:32:21 PDT" duration-ms="7">
+  <suite started-at="2023-05-04T11:39:24 PDT" name="Data Driver Basics" finished-at="2023-05-04T11:39:28 PDT" duration-ms="3869">
     <groups>
     </groups>
-    <test started-at="2023-04-14T08:32:21 PDT" name="Default test" finished-at="2023-04-14T08:32:21 PDT" duration-ms="7">
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    <test started-at="2023-05-04T11:39:24 PDT" name="LoginTest" finished-at="2023-05-04T11:39:28 PDT" duration-ms="3869">
+      <class name="com.caleb.testcases.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.caleb.testcases.LoginTest@77847718]" started-at="2023-05-04T11:39:21 PDT" name="setUp" finished-at="2023-05-04T11:39:24 PDT" duration-ms="3303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginAsBankManager()[pri:0, instance:com.caleb.testcases.LoginTest@77847718]" started-at="2023-05-04T11:39:24 PDT" name="loginAsBankManager" finished-at="2023-05-04T11:39:28 PDT" duration-ms="3844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAsBankManager -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.caleb.testcases.LoginTest@77847718]" started-at="2023-05-04T11:39:28 PDT" name="teardown" finished-at="2023-05-04T11:39:28 PDT" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.caleb.testcases.LoginTest -->
+    </test> <!-- LoginTest -->
+  </suite> <!-- Data Driver Basics -->
 </testng-results>
