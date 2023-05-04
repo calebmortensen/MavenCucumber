@@ -12,17 +12,23 @@ public class LoginTest extends TestBase {
 	@Test
 	public void loginAsBankManager() throws InterruptedException {
 		
-		/*
-		 * WebElement BankManagerLoginButton =
-		 * driver.findElement(By.xpath("//button[contains(.,'Bank Manager Login')]"));
-		 * Assert.assertEquals(true, BankManagerLoginButton.isDisplayed());
-		 * BankManagerLoginButton.click();
-		 */
-		WebElement BankManagerLoginButton = driver.findElement(By.cssSelector(OR.getProperty("bmlBtn")));
-		Assert.assertEquals(true, BankManagerLoginButton.isDisplayed());
-		BankManagerLoginButton.click();
-		driver.findElement(By.cssSelector(OR.getProperty("bmlBtn"))).click();
-		Thread.sleep(3000);
+			 	 
+			  log.debug("Inside BankManager Login Test");
+			  WebElement BankManagerLoginButton =
+			  driver.findElement(By.cssSelector(OR.getProperty("bmlBtn")));
+			  Assert.assertEquals(true, BankManagerLoginButton.isDisplayed());
+			  BankManagerLoginButton.click();
+			  driver.findElement(By.cssSelector(OR.getProperty("bmlBtn"))).click();
+			  Thread.sleep(3000);
+			  log.debug("Login Successfully Executed");
+			 
+		
+				/*
+				 * WebElement BankManagerLoginButton =
+				 * driver.findElement(By.xpath(OR.getProperty("xbmlBtn")));
+				 * Assert.assertEquals(true, BankManagerLoginButton.isDisplayed());
+				 * BankManagerLoginButton.click(); Thread.sleep(3000);
+				 */
 		
 	}
 
