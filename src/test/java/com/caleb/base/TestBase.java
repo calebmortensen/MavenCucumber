@@ -3,16 +3,21 @@ package com.caleb.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import com.caleb.utilities.ExcelReader;
 
 public class TestBase {
 
@@ -25,7 +30,9 @@ public class TestBase {
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
 	public static Logger log = Logger.getLogger("devpinoyLogger");
-	
+	public static WebElement element;
+	//public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "/src/test/resources/excel/testdata.ods");
+	public static WebDriverWait wait;
 	
 	
 	@BeforeSuite
@@ -77,9 +84,26 @@ public class TestBase {
 			driver.get(config.getProperty("testsiteurl"));
 			log.debug("Navigated to: "+ config.getProperty("testsiteurl"));
 			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")), TimeUnit.SECONDS);
+		    //wait = new WebDriverWait(driver, 5);
 		}
 		
 	}
+	
+	public boolean isElementPresent (By by) {
+		
+		try {
+			
+			driver.findElement(by);
+			return true;
+			
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		
+		
+	}
+	
+	
 	
 	@AfterSuite
 	public void teardown() {
