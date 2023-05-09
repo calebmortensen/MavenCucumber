@@ -36,7 +36,7 @@ public class Demo {
 		 * while(resultSet.next()) {
 		 * System.out.println(resultSet.getString("Name")+"--"+resultSet.getString(
 		 * "Location")+"--"+resultSet.getInt("Experience")); }
-		 */
+		 */ 
 		
 		
 		//Prepared Statement to Retrieve the Filtered Records from the Employee table

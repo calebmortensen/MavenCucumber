@@ -3,6 +3,7 @@ package com.caleb.testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.caleb.base.TestBase;
@@ -17,6 +18,8 @@ public class BankManagerLogin extends TestBase {
 		BankManagerLoginButton.click();
 		Assert.assertTrue(isElementPresent(By.cssSelector(OR.getProperty("addCustBtn"))), "Login Not Successful");
 		log.debug("Login Successfully Executed");
+		Reporter.log("Login Successfully Executed");
+		//Reporter.log("<a target=\"_blank\" href="path_to_Error.jpg">Screenshot</a>");
 		/*
 		 * Assert.assertEquals(true, BankManagerLoginButton.isDisplayed());
 		/*
