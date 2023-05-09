@@ -7,9 +7,11 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
+import com.caleb.base.TestBase;
 import com.caleb.utilities.TestUtil;
+import com.relevantcodes.extentreports.LogStatus;
 
-public class CustomListeners implements ITestListener {
+public class CustomListeners extends TestBase implements ITestListener {
 	
 	// ADDED LISTENERS TO BE INVOKED VIA THE testng.XML
 	
@@ -22,7 +24,7 @@ public class CustomListeners implements ITestListener {
 	   * @see ITestResult#STARTED
 	   */
 	  public void onTestStart(ITestResult result) {
-	    // not implemented
+	    test = rep.startTest(result.getName().toUpperCase());  //This will generate test to get reports
 	  }
 
 	  /**
@@ -32,7 +34,9 @@ public class CustomListeners implements ITestListener {
 	   * @see ITestResult#SUCCESS
 	   */
 	  public void onTestSuccess(ITestResult result) {
-	    // not implemented
+	    test.log(LogStatus.PASS, result.getName().toUpperCase()+" PASS");
+	    rep.endTest(test);
+	    rep.flush(); //This generates report
 	  }
 
 	  /**
@@ -49,6 +53,11 @@ public class CustomListeners implements ITestListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		  test.log(LogStatus.FAIL, result.getName().toUpperCase()+" FAIL with Exception : " + result.getThrowable());
+		  test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+		    rep.endTest(test);
+		    rep.flush(); //This generates report
+		    
 		  
 	  }
 

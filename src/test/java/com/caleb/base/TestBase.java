@@ -18,6 +18,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import com.caleb.utilities.ExcelReader;
+import com.caleb.utilities.ExtentManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 public class TestBase {
 
@@ -33,6 +36,8 @@ public class TestBase {
 	public static WebElement element;
 	//public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "/src/test/resources/excel/testdata.ods");
 	public static WebDriverWait wait;
+	public ExtentReports rep = ExtentManager.getInstance();
+	public static ExtentTest test;
 	
 	
 	@BeforeSuite
