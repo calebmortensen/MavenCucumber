@@ -6,7 +6,7 @@ public class GenericRunner {
 
 	public static void main(String[] args) {
 
-		List<String> list3 = List.of("Apple", "Banana", "Cat", "Dog");
+		//List<String> list3 = List.of("Apple", "Banana", "Cat", "Dog");
 
 		MyCustomList<String> list = new MyCustomList<>();
 		list.addElement("Element 1");
@@ -22,7 +22,7 @@ public class GenericRunner {
 		System.out.println(number);
 
 		// System.out.println(sumOfNumberList(List.of(1,2,3,4,5)));
-		printWithFP(list3);
+		//printWithFP(list3);
 		
 		random();
 
@@ -46,7 +46,7 @@ public class GenericRunner {
 
 	private static void printWithFP(List<String> list) {
 		// Lambda Expression ->
-		list.stream().forEach(element -> System.out.println("element - " + element));
+		//list.stream().forEach(element -> System.out.println("element - " + element));
 	}
 
 	public static void random() {
