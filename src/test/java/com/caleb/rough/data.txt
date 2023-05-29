@@ -1,0 +1,8 @@
+Cat
+Rat
+Dog
+Bird
+Monkey
+Elephant
+Dinosaur
+Zebra
