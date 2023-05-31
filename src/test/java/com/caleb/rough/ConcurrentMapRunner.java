@@ -1,23 +1,20 @@
 package com.caleb.rough;
 
-import java.util.*;
 import java.util.concurrent.atomic.LongAdder;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public class ConcurrentMapRunner {
 
 	public static void main(String[] args) {
-		Map<Character, LongAdder> occurances = new Hashtable<>();
-		
+		ConcurrentMap<Character, LongAdder> occurances = new ConcurrentHashMap<>();
+
 		String str = "ABCD ABCD ABCD";
-		for(char character:str.toCharArray()) {
-			LongAdder longAdder = occurances.get(character);
-			if(longAdder == null) {
-				longAdder = new LongAdder();
-			}
-			longAdder.increment();
-			occurances.put(character, longAdder);
+		for (char character : str.toCharArray()) {
+			occurances.computeIfAbsent(character, ch -> new LongAdder()).increment();
+
 		}
-			System.out.println(occurances);
+		System.out.println(occurances);
 	}
 
 }
